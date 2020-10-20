@@ -1,0 +1,15 @@
+{
+    "name": "helsingborg-stad/sso-saml",
+    "description": "SAML SSO solution for Wordpress",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joel Bernerman",
+            "email": "joel.bernerman@helsingborg.se"
+        }
+    ],
+    "require": {
+        "onelogin/php-saml": "^3.4"
+    }
+}
