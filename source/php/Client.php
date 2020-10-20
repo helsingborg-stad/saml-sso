@@ -52,7 +52,7 @@ class Client
      */
     public function authenticate($relayState)
     {
-        $this->saml->login($relayState); // TODO handle everything after this in the ACP endpoint?
+        $this->saml->login($relayState);
     }
 
 
