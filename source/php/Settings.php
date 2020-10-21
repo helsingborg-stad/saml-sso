@@ -46,13 +46,15 @@ class Settings
     {
         $this->overrideDefaults();
         $missingConstants = $this->getMissingRequiredConstants();
+        
         if (count($missingConstants) > 0) {
             $this->missingSettingsMessage = '<b>SAML SSO Plugin</b> is missing required settings! <br>' .
                                             'Required constants needs to be present in you wp-config.php:<br>' .
-                                            implode($missingConstants, ',<br>');
+                                            implode(',<br>', $missingConstants);
 
             add_action('admin_notices', array($this, 'settingsNotice'));
-            $this->isConfigSatisfied = false;
+            $this->isSettingsSatisfied = false;
+            error_log(strip_tags($this->missingSettingsMessage));
         }
     }
 
@@ -80,7 +82,7 @@ class Settings
     public function overrideDefaults()
     {
         foreach ($this->defaultConstants as $defaultConstant => $defaultValue) {
-            if (!defined($defaultConstant)) {
+            if (defined($defaultConstant)) {
                 $this->defaultConstants[$defaultConstant] = constant($defaultConstant);
             }
         }
