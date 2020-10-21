@@ -118,7 +118,7 @@ class Settings
                     'url' => SAML_IDP_SLS_URL,
                     'binding' => $this->defaultConstants['SAML_IDP_SLS_BINDING'],
                 ],
-                $this->defaultConstants['SAML_IDP_CERTIFICATE'],
+                'x509cert' => $this->defaultConstants['SAML_IDP_CERTIFICATE'],
             ],
             'security' => [
                 'requestedAuthnContext' => $this->defaultConstants['SAML_SECURITY_REQUESTED_AUTHN_CONTEXT'],

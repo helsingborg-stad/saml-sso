@@ -7,14 +7,14 @@ use OneLogin\Saml2\Auth;
 class Endpoints
 {
     // Enpoint and response class name array.
-    private $endpoints = [
+    public $endpoints = [
         'ACS' => 'acs',
         'Metadata' => 'metadata',
         'Logout' => 'logout'
     ];
 
     // Base endpoint.
-    private $baseEndpoint = 'saml';
+    public $baseEndpoint = 'saml';
 
     /**
      * Constructor. Add neccessary actions and filters for our endpoints to work.
