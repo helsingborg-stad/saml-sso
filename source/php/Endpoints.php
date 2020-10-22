@@ -82,4 +82,31 @@ class Endpoints
     {
         flush_rewrite_rules();
     }
+
+    /**
+     * Check if current request uri is one of our endpoints.
+     *
+     * @return bool
+     */
+    public static function isSAMLSSOEndpoint()
+    {
+        $isSAMLSSOEndpoint = false;
+
+        $endpoints = new Endpoints();
+        // Subfolder mutisites got different path structure than single installs and subdomain multisite.
+        if (is_multisite() && !is_subdomain_install()) {
+            $baseEndpoint = get_blog_details()->path . $endpoints->baseEndpoint;
+        } else {
+            $baseEndpoint = $endpoints->baseEndpoint;
+        }
+        
+        foreach ($endpoints->endpoints as $endpoint) {
+            $fullEndpoint = $baseEndpoint . '/' . $endpoint;
+            if (substr($_SERVER['REQUEST_URI'], 0, strlen($fullEndpoint)) === $fullEndpoint) {
+                $isSAMLSSOEndpoint = true;
+                break;
+            }
+        }
+        return $isSAMLSSOEndpoint;
+    }
 }
