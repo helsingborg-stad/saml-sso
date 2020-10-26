@@ -64,7 +64,10 @@ class Client
      */
     public function simulateSignon($username)
     {
-        $this->updateRole($username);
+        if (defined(SAML_MAP_TO_AD_GROUP) && SAML_MAP_TO_AD_GROUP === true) {
+            $this->updateRole($username);
+        }
+        
         $user = get_user_by('login', $username);
 
         wp_set_auth_cookie($user->ID);

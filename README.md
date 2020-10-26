@@ -176,7 +176,9 @@ SAML_ATTRIBUTES_MAPPING = [
     'ad-groups' => 'http://schemas.xmlsoap.org/claims/Group',
 ];
 
-SAML_GROUP_ROLE_MAPPING = [
+SAML_MAP_TO_AD_GROUP = true;
+
+SAML_AD_GROUP_ROLE_MAPPING = [
     'Domain Users' => 'subscriber',
     'Domain Admins' => 'administrator'
 ];
