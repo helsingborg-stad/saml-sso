@@ -164,7 +164,7 @@ Additional PHP-SAML settings can be added with the `saml-sso-settings` filter.
 #### Other constants
 
 Two constants is present for mapping configuration.  
-Overwrite this with constants `SAML_ATTRIBUTES_MAPPING` and `SAML_GROUP_ROLE_MAPPING` in `wp-config-php`.
+Overwrite this with constants `SAML_ATTRIBUTES_MAPPING` and `SAML_AD_GROUP_ROLE_MAPPING` in `wp-config-php`.
 
 Default values:
 ```php

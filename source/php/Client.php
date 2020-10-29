@@ -35,8 +35,8 @@ class Client
                 $this->attributesMapping = SAML_ATTRIBUTES_MAPPING;
             }
 
-            if (defined('SAML_GROUP_ROLE_MAPPING')) {
-                $this->groupRoleMapping = SAML_GROUP_ROLE_MAPPING;
+            if (defined('SAML_AD_GROUP_ROLE_MAPPING')) {
+                $this->groupRoleMapping = SAML_AD_GROUP_ROLE_MAPPING;
             }
 
             $this->saml = new Auth($settings->getSettings());
