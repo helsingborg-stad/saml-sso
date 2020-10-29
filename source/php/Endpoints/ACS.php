@@ -34,8 +34,6 @@ class ACS
         $username = $attributes[$client->attributesMapping['username']][0];
         $client->simulateSignon($username);
 
-        if (isset($_POST['RelayState']) && Utils::getSelfURL() != $_POST['RelayState']) {
-            $client->saml->redirectTo($_POST['RelayState']);
-        }
+        $client->saml->redirectTo($_POST['RelayState']);
     }
 }

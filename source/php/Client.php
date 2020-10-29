@@ -28,6 +28,7 @@ class Client
     public function __construct()
     {
         $settings = new Settings();
+
         if ($settings->isSettingsSatisfied) {
             // Make the mappings overwritable with constants.
             if (defined('SAML_ATTRIBUTES_MAPPING')) {
@@ -39,9 +40,6 @@ class Client
             }
 
             $this->saml = new Auth($settings->getSettings());
-        } else {
-            // Log for any calls not originating from the to the client.
-            error_log($settings->missingSettingsMessage);
         }
     }
 
