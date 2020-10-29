@@ -4,7 +4,7 @@
  * Plugin Name:       SAML SSO
  * Plugin URI:        saml-sso
  * Description:       SAML SSO solution for Wordpress
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Joel Bernerman <joel.bernerman@helsingborg.se>
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
