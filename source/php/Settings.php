@@ -91,7 +91,7 @@ class Settings
     /**
      * Get all settings.
      *
-     * @return array Settings structure as SAML-PHP lib wants it with added mapping for groups and attributes.
+     * @return array Settings structure as SAML-PHP lib wants it.
      */
     public function getSettings()
     {
